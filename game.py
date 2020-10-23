@@ -43,3 +43,7 @@ class State:
 
     def sid(self):
         return f'[{self.ls}:{self.rs}]'
+
+    def __str__(self):
+        v = '\033[3' + ['1min', '2m'][self.is_valid()] + 'valid\033[m'
+        return f'{self.sid()} {v}'
